@@ -181,9 +181,14 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Scripts\CancelButton.cs" />
      <Compile Include="Assets\Scripts\CloudMotion.cs" />
+     <Compile Include="Assets\Scripts\CloudSpawn.cs" />
      <Compile Include="Assets\Scripts\Countdown.cs" />
+     <Compile Include="Assets\Scripts\DestroyMeteors.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\MeteorsMotion.cs" />
+     <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\UI\UIButtonComponent.cs" />
      <Compile Include="Assets\Scripts\UI\UIUpgradeWindow.cs" />
      <Compile Include="Assets\Scripts\UI\UIWindow.cs" />
