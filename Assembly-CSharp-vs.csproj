@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\DestroyMeteors.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\MeteorsMotion.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\UI\UIButtonComponent.cs" />
      <Compile Include="Assets\Scripts\UI\UIUpgradeWindow.cs" />

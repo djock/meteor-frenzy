@@ -3,13 +3,29 @@ using System.Collections;
 
 public class DestroyMeteors : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public int pointsToAdd;
+
+	void Update()
+	{	
+		Destroy ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Destroy () 
+	{
+		if (Input.GetMouseButtonDown(0)) 
+		{
+			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+			
+			if(hit.collider != null)
+			{
+				if(hit.collider.gameObject == gameObject) 
+				{	
+					GameManager.AddPoints (pointsToAdd);
+					Destroy(gameObject);
+				}
+			}
+		}
+		
+		
 	}
 }

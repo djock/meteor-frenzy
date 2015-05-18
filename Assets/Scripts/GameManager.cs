@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	private GameObject house;
+	private GameObject trees;
+	private GameObject tractor;
 
 	[Header ("Window Holder")]
 	[SerializeField] public UIPanel menuPanel;
@@ -18,12 +21,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject meteorBig;
 	public GameObject meteorSmall;
 	public UILabel scoreLabel;
+	public UIPanel uiHolder;
 
 	[Header ("Public Variables")]
 	public float countdownTime;
 	public static int score;
 
-	public static GameManager Instance;
+		public static GameManager Instance;
 
 	enum gameState {
 		running,
@@ -40,7 +44,12 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		house = GameObject.Find ("House");
+		trees = GameObject.Find ("Trees");
+		tractor = GameObject.Find ("Tractor");
+
 		score = 0;
+
 		this.gs = gameState.paused;
 		Debug.LogError("Game state: " + gs);
 	}
@@ -50,7 +59,6 @@ public class GameManager : MonoBehaviour {
 	{
 		Quit ();
 		Score ();
-
 	}
 
 	public void CountDownTimer() 
@@ -62,14 +70,13 @@ public class GameManager : MonoBehaviour {
 		} else if (countdownTime < 1 && countdownTime > 0) {
 			timeLabel.text = "GO";
 		} else if (countdownTime < 0 && countdownTime > -1) {
-			Debug.Log ("Stop");
 			NGUITools.SetActive (gameStart.gameObject, false);
 			this.gs = gameState.running;
 			Debug.LogError("Game state: " + gs);
+			NGUITools.SetActive (uiHolder.gameObject, true);
 			GenerateMeteors ();
-
 		}
-	
+
 		countdownTime -= Time.deltaTime;
 	}
 
@@ -79,10 +86,11 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
 			this.gs = gameState.paused;
-			Debug.Log("Close");
+			Debug.LogError("Game state: " + gs);
 			if(!quitGame.gameObject.activeSelf)
 			{
 				NGUITools.SetActive (quitGame.gameObject, true);
+				MeteorsMotion.meteorSpeed = 0;
 			}
 
 		}
@@ -90,19 +98,24 @@ public class GameManager : MonoBehaviour {
 
 	void GenerateMeteors()
 	{
-		if (this.gs == gameState.running) {
-			InvokeRepeating("SpawnBigMeteor", 0.1f, 1f);
-			InvokeRepeating("SpawnSmallMeteor", 0.12f, 1.2f);
-		}
+		MeteorsMotion.meteorSpeed = -1f;
+		InvokeRepeating ("SpawnBigMeteor", 0.13f, 1.3f);
+		InvokeRepeating ("SpawnSmallMeteor", 0.13f, 1.3f);
+
 	}
 
 	void SpawnBigMeteor()
 	{
-		Instantiate (meteorBig);
+		if (this.gs == gameState.running) {
+			Instantiate (meteorBig);
+		}
 	}
+
 	void SpawnSmallMeteor()
 	{
+	if (this.gs == gameState.running) {
 		Instantiate (meteorSmall);
+	}
 	}
 
 	void Score()
@@ -119,4 +132,17 @@ public class GameManager : MonoBehaviour {
 		
 		Debug.Log ("Score: " + score);
 	}
+
+	public void CheckPlayerStatus()
+	{
+		if (house == null && trees == null && tractor == null) {
+			this.gs = gameState.paused;
+			Debug.LogError ("Game state: " + gs);
+			if (!gameOver.gameObject.activeSelf) {
+				NGUITools.SetActive (gameOver.gameObject, true);
+				MeteorsMotion.meteorSpeed = 0;
+			}
+		}
+	}
+
 }

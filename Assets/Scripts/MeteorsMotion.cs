@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MeteorsMotion : MonoBehaviour {
 
-	public float meteorSpeed;
+	public static float meteorSpeed;
 	
 	public Vector2 velocity = new Vector2(4, -2);
 	public float range;
