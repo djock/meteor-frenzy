@@ -3,9 +3,9 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	private GameObject house;
-	private GameObject trees;
-	private GameObject tractor;
+	public GameObject house;
+	public GameObject trees;
+	public GameObject tractor;
 
 	[Header ("Window Holder")]
 	[SerializeField] public UIPanel menuPanel;
@@ -133,16 +133,20 @@ public class GameManager : MonoBehaviour {
 		Debug.Log ("Score: " + score);
 	}
 
-	public void CheckPlayerStatus()
+	void GameOver()
 	{
-		if (house == null && trees == null && tractor == null) {
-			this.gs = gameState.paused;
-			Debug.LogError ("Game state: " + gs);
-			if (!gameOver.gameObject.activeSelf) {
-				NGUITools.SetActive (gameOver.gameObject, true);
-				MeteorsMotion.meteorSpeed = 0;
-			}
+		this.gs = gameState.paused;
+		Debug.LogError ("Game state: " + gs);
+		if (!gameOver.gameObject.activeSelf) {
+			NGUITools.SetActive (gameOver.gameObject, true);
+			MeteorsMotion.meteorSpeed = 0;
 		}
 	}
 
+	/*public static void IsPlayerAlive () {
+		if (house.gameObject == null && trees.gameObject == null && tractor.gameObject == null) {
+			//GameOver();
+			Debug.LogError("Player dead");
+		}
+	}*/
 }

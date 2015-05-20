@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour {
 		if (other.tag == "Meteor") {
 			Destroy (gameObject);
 			Destroy(other.gameObject);
-			GameManager.CheckPlayerStatus();
 		}
 
 	}
