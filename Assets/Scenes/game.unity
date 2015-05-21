@@ -262,7 +262,7 @@ GameObject:
   - 114: {fileID: 285946918}
   - 114: {fileID: 285946919}
   m_Layer: 8
-  m_Name: OK
+  m_Name: Cancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,9 +392,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 285946913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1fe8c2f875c3ad4cba44bbd57c11a4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e496b0fce2e3bf4e8618bb3a3fac564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1192115310}
 --- !u!1 &342423301
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,9 +486,9 @@ GameObject:
   - 61: {fileID: 432717677}
   - 114: {fileID: 432717676}
   - 114: {fileID: 432717678}
-  - 114: {fileID: 432717680}
+  - 114: {fileID: 432717679}
   m_Layer: 8
-  m_Name: Cancel
+  m_Name: OK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +610,7 @@ MonoBehaviour:
   hover: {x: 1, y: 1, z: 1}
   pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
   duration: .100000001
---- !u!114 &432717680
+--- !u!114 &432717679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -617,10 +618,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 432717673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e496b0fce2e3bf4e8618bb3a3fac564, type: 3}
+  m_Script: {fileID: 11500000, guid: b1fe8c2f875c3ad4cba44bbd57c11a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1192115310}
 --- !u!1 &623710405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,7 +2428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1192115309
 Transform:
   m_ObjectHideFlags: 0
@@ -2479,7 +2479,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3006
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 03f8eb27e9638af4d9c03618187db866, type: 3}
   mFont: {fileID: 0}
-  mText: Cancel
+  mText: OK
   mFontSize: 30
   mFontStyle: 1
   mAlignment: 0
@@ -2960,7 +2960,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 03f8eb27e9638af4d9c03618187db866, type: 3}
   mFont: {fileID: 0}
-  mText: Play
+  mText: Cancel
   mFontSize: 30
   mFontStyle: 1
   mAlignment: 0
@@ -3942,7 +3942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1861713843
 Transform:
   m_ObjectHideFlags: 0
@@ -4230,13 +4230,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: .498039216}
   mPivot: 4
-  mWidth: 648
+  mWidth: 647
   mHeight: 1152
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .5625
+  aspectRatio: .561631918
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
