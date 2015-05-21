@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 245b34401ffa9374994bdb0612ef0d6d, type: 2}
   mSprites:
   - name: 3637383038352d686f7573652d313238
-    x: 964
-    y: 202
+    x: 1707
+    y: 1281
     width: 122
     height: 107
     borderLeft: 0
@@ -55,8 +55,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 6261636b67726f756e64
-    x: 0
-    y: 256
+    x: 769
+    y: 1280
     width: 768
     height: 768
     borderLeft: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 636c6f756431
-    x: 501
-    y: 83
+    x: 0
+    y: 495
     width: 249
     height: 172
     borderLeft: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
     paddingTop: 213
     paddingBottom: 247
   - name: 636c6f756432
-    x: 769
-    y: 833
+    x: 1538
+    y: 1389
     width: 321
     height: 191
     borderLeft: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 636c6f756433
-    x: 769
-    y: 623
+    x: 0
+    y: 668
     width: 288
     height: 209
     borderLeft: 0
@@ -107,8 +107,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 636c6f756434
-    x: 769
-    y: 310
+    x: 0
+    y: 184
     width: 200
     height: 137
     borderLeft: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 636c6f756435
-    x: 769
-    y: 63
+    x: 517
+    y: 1048
     width: 196
     height: 115
     borderLeft: 0
@@ -132,9 +132,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: 678085-house-128
+    x: 517
+    y: 456
+    width: 122
+    height: 107
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: 686f757365323034
-    x: 1091
-    y: 414
+    x: 517
+    y: 564
     width: 128
     height: 116
     borderLeft: 0
@@ -146,8 +159,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 6
   - name: 6d6574656f72426967
-    x: 562
-    y: 33
+    x: 250
+    y: 445
     width: 60
     height: 49
     borderLeft: 0
@@ -159,8 +172,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 6d6574656f72536d616c6c
-    x: 501
-    y: 25
+    x: 250
+    y: 552
     width: 60
     height: 57
     borderLeft: 0
@@ -172,8 +185,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 6d6f756e7461696e
-    x: 0
-    y: 22
+    x: 1538
+    y: 1581
     width: 500
     height: 233
     borderLeft: 0
@@ -185,8 +198,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 6f6e65
-    x: 0
-    y: 5
+    x: 1830
+    y: 1355
     width: 16
     height: 16
     borderLeft: 2
@@ -198,8 +211,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 706c61793435
-    x: 966
-    y: 50
+    x: 517
+    y: 327
     width: 76
     height: 128
     borderLeft: 0
@@ -211,8 +224,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 706f74696f6e
-    x: 946
-    y: 463
+    x: 322
+    y: 698
     width: 142
     height: 159
     borderLeft: 0
@@ -224,8 +237,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 7361643339
-    x: 1091
-    y: 783
+    x: 322
+    y: 327
     width: 128
     height: 128
     borderLeft: 0
@@ -237,8 +250,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 73746172313738
-    x: 1091
-    y: 531
+    x: 517
+    y: 798
     width: 128
     height: 124
     borderLeft: 0
@@ -250,8 +263,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 2
   - name: 74696c65
-    x: 1248
-    y: 937
+    x: 517
+    y: 239
     width: 88
     height: 87
     borderLeft: 0
@@ -263,8 +276,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 74696c655f32
-    x: 769
-    y: 448
+    x: 1538
+    y: 1286
     width: 168
     height: 102
     borderLeft: 15
@@ -276,8 +289,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 74726163746f72
-    x: 1091
-    y: 912
+    x: 322
+    y: 585
     width: 156
     height: 112
     borderLeft: 0
@@ -289,8 +302,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 74726565
-    x: 970
-    y: 317
+    x: 201
+    y: 53
     width: 119
     height: 130
     borderLeft: 0
@@ -302,8 +315,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 7472656573
-    x: 769
-    y: 179
+    x: 322
+    y: 1018
     width: 194
     height: 130
     borderLeft: 0
@@ -315,8 +328,281 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: 7570646174653236
-    x: 1091
-    y: 656
+    x: 322
+    y: 73
+    width: 128
+    height: 126
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: background
+    x: 0
+    y: 1280
+    width: 768
+    height: 768
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cloud1
+    x: 0
+    y: 322
+    width: 249
+    height: 172
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 180
+    paddingRight: 203
+    paddingTop: 213
+    paddingBottom: 247
+  - name: cloud2
+    x: 0
+    y: 1088
+    width: 321
+    height: 191
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cloud3
+    x: 0
+    y: 878
+    width: 288
+    height: 209
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cloud4
+    x: 0
+    y: 46
+    width: 200
+    height: 137
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cloud5
+    x: 517
+    y: 1164
+    width: 196
+    height: 115
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: house204
+    x: 517
+    y: 681
+    width: 128
+    height: 116
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 6
+    paddingBottom: 6
+  - name: meteorBig
+    x: 250
+    y: 502
+    width: 60
+    height: 49
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: meteorSmall
+    x: 250
+    y: 610
+    width: 60
+    height: 57
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: mountain
+    x: 1538
+    y: 1815
+    width: 500
+    height: 233
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: one
+    x: 1830
+    y: 1372
+    width: 16
+    height: 16
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: play45
+    x: 594
+    y: 327
+    width: 76
+    height: 128
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 26
+    paddingTop: 0
+    paddingBottom: 0
+  - name: potion
+    x: 322
+    y: 858
+    width: 142
+    height: 159
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: sad39
+    x: 322
+    y: 456
+    width: 128
+    height: 128
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: star178
+    x: 517
+    y: 923
+    width: 128
+    height: 124
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 2
+    paddingBottom: 2
+  - name: tile
+    x: 606
+    y: 239
+    width: 88
+    height: 87
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tile_2
+    x: 1860
+    y: 1406
+    width: 176
+    height: 174
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tractor
+    x: 1860
+    y: 1293
+    width: 156
+    height: 112
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tree
+    x: 201
+    y: 191
+    width: 119
+    height: 130
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: trees
+    x: 322
+    y: 1149
+    width: 194
+    height: 130
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: update26
+    x: 322
+    y: 200
     width: 128
     height: 126
     borderLeft: 0

@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealth : MonoBehaviour
+{
 
-	void OnTriggerEnter2D(Collider2D other) 
+	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "Meteor") {
-			Destroy (gameObject);
-			Destroy(other.gameObject);
-		}
+		NGUITools.Destroy (other.gameObject);
+		NGUITools.SetActive (gameObject, false);
+	}
 
+	void OnDisable ()
+	{
+		GameManager.Instance.IsPlayerAlive ();
 	}
 }

@@ -1,27 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyMeteors : MonoBehaviour {
+public class DestroyMeteors : MonoBehaviour
+{
 
 	public int pointsToAdd;
 
-	void Update()
+	void Update ()
 	{	
 		Destroy ();
 	}
 
-	void Destroy () 
+	void Destroy ()
 	{
-		if (Input.GetMouseButtonDown(0)) 
-		{
-			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		if (Input.GetMouseButtonDown (0)) {
+			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 			
-			if(hit.collider != null)
-			{
-				if(hit.collider.gameObject == gameObject) 
-				{	
-					GameManager.AddPoints (pointsToAdd);
-					Destroy(gameObject);
+			if (hit.collider != null) {
+				if (hit.collider.gameObject == gameObject) {	
+					GameManager.Instance.AddPoints (pointsToAdd);
+					Destroy (gameObject);
 				}
 			}
 		}

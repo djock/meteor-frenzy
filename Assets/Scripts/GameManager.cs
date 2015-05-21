@@ -1,67 +1,78 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
 	public GameObject house;
 	public GameObject trees;
 	public GameObject tractor;
 
 	[Header ("Window Holder")]
-	[SerializeField] public UIPanel menuPanel;
-	[SerializeField] UIPanel gameStart;
+	[SerializeField]
+	public UIPanel
+		menuPanel;
+	[SerializeField]
+	UIPanel
+		gameStart;
 
 	[Header ("Modal Holder")]
-	[SerializeField] UIPanel quitGame;
-	[SerializeField] UIPanel pauseGame;
-	[SerializeField] UIPanel gameOver;
+	[SerializeField]
+	UIPanel
+		quitGame;
+	[SerializeField]
+	UIPanel
+		pauseGame;
+	[SerializeField]
+	UIPanel
+		gameOver;
 
 	[Header ("UI Components")]
-	public UILabel timeLabel;
+	public UILabel
+		timeLabel;
 	public GameObject meteorBig;
 	public GameObject meteorSmall;
 	public UILabel scoreLabel;
 	public UIPanel uiHolder;
+	public GameObject meteorHolder;
 
 	[Header ("Public Variables")]
-	public float countdownTime;
+	public float
+		countdownTime;
 	public static int score;
 
-		public static GameManager Instance;
+	public static GameManager Instance;
 
-	enum gameState {
+	enum gameState
+	{
 		running,
 		paused,
 	};
 
 	gameState gs;
 
-	void Awake()
+	void Awake ()
 	{
 		Instance = this;
 	}
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
-		house = GameObject.Find ("House");
-		trees = GameObject.Find ("Trees");
-		tractor = GameObject.Find ("Tractor");
-
 		score = 0;
 
 		this.gs = gameState.paused;
-		Debug.LogError("Game state: " + gs);
+		Debug.LogWarning ("Game state: " + gs);
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		Quit ();
 		Score ();
 	}
 
-	public void CountDownTimer() 
+	public void CountDownTimer ()
 	{
 		// 3,2,1 - GO
 		if (countdownTime > 1) {
@@ -72,7 +83,7 @@ public class GameManager : MonoBehaviour {
 		} else if (countdownTime < 0 && countdownTime > -1) {
 			NGUITools.SetActive (gameStart.gameObject, false);
 			this.gs = gameState.running;
-			Debug.LogError("Game state: " + gs);
+			Debug.LogError ("Game state: " + gs);
 			NGUITools.SetActive (uiHolder.gameObject, true);
 			GenerateMeteors ();
 		}
@@ -80,15 +91,13 @@ public class GameManager : MonoBehaviour {
 		countdownTime -= Time.deltaTime;
 	}
 
-	void Quit()
+	void Quit ()
 	{
 
-		if (Input.GetKeyDown (KeyCode.Escape)) 
-		{
+		if (Input.GetKeyDown (KeyCode.Escape)) {
 			this.gs = gameState.paused;
-			Debug.LogError("Game state: " + gs);
-			if(!quitGame.gameObject.activeSelf)
-			{
+			Debug.LogError ("Game state: " + gs);
+			if (!quitGame.gameObject.activeSelf) {
 				NGUITools.SetActive (quitGame.gameObject, true);
 				MeteorsMotion.meteorSpeed = 0;
 			}
@@ -96,7 +105,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void GenerateMeteors()
+	void GenerateMeteors ()
 	{
 		MeteorsMotion.meteorSpeed = -1f;
 		InvokeRepeating ("SpawnBigMeteor", 0.13f, 1.3f);
@@ -104,21 +113,27 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void SpawnBigMeteor()
+	void SpawnBigMeteor ()
 	{
 		if (this.gs == gameState.running) {
-			Instantiate (meteorBig);
+			NGUITools.AddChild (meteorHolder, meteorBig);
+			//Instantiate (meteorBig);
 		}
 	}
 
-	void SpawnSmallMeteor()
+	void SpawnSmallMeteor ()
 	{
-	if (this.gs == gameState.running) {
-		Instantiate (meteorSmall);
-	}
+		if (this.gs == gameState.running) {
+			var go = NGUITools.AddChild (meteorHolder, meteorSmall);
+			var randY = Random.Range (-150, -200);
+			var position = new Vector3 (0, (float)randY, 0);
+
+			go.transform.localPosition = position;
+			//Instantiate (meteorSmall);
+		}
 	}
 
-	void Score()
+	void Score ()
 	{
 		if (score < 0)
 			score = 0;
@@ -126,27 +141,32 @@ public class GameManager : MonoBehaviour {
 		scoreLabel.text = "" + score;
 	}
 
-	public static void AddPoints(int pointsToAdd)
+	public void AddPoints (int pointsToAdd)
 	{
 		score += pointsToAdd;
 		
 		Debug.Log ("Score: " + score);
 	}
 
-	void GameOver()
+	void GameOver ()
 	{
 		this.gs = gameState.paused;
 		Debug.LogError ("Game state: " + gs);
 		if (!gameOver.gameObject.activeSelf) {
-			NGUITools.SetActive (gameOver.gameObject, true);
+			//NGUITools.SetActive (gameOver.gameObject, true);
+			UIWindow.Show (gameOver);
 			MeteorsMotion.meteorSpeed = 0;
 		}
 	}
 
-	/*public static void IsPlayerAlive () {
-		if (house.gameObject == null && trees.gameObject == null && tractor.gameObject == null) {
-			//GameOver();
-			Debug.LogError("Player dead");
+	public void IsPlayerAlive ()
+	{
+		Debug.LogError (house.activeSelf);
+		Debug.LogError (trees.activeSelf);
+		Debug.LogError (tractor.activeSelf);
+		if (!house.activeSelf && !trees.activeSelf && !tractor.activeSelf) {
+			GameOver ();
+			Debug.LogError ("Player dead");
 		}
-	}*/
+	}
 }
