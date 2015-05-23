@@ -3,42 +3,34 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-
+	[Header ("Player Assets")]
 	public GameObject house;
 	public GameObject trees;
 	public GameObject tractor;
 
 	[Header ("Window Holder")]
-	[SerializeField]
-	public UIPanel
-		menuPanel;
-	[SerializeField]
-	UIPanel
-		gameStart;
+	public UIPanel menuPanel;
+	public UIPanel countdownScreen;
+	public UIPanel uiHolder;
 
 	[Header ("Modal Holder")]
-	[SerializeField]
-	UIPanel
-		quitGame;
-	[SerializeField]
-	UIPanel
-		pauseGame;
-	[SerializeField]
-	UIPanel
-		gameOver;
+	public UIPanel quitGame;
+	public UIPanel gameOver;
 
-	[Header ("UI Components")]
-	public UILabel
-		timeLabel;
+	[Header ("Meteors")]
 	public GameObject meteorBig;
 	public GameObject meteorSmall;
-	public UILabel scoreLabel;
-	public UIPanel uiHolder;
+
+	[Header ("UI Components")]
 	public GameObject meteorHolder;
+	public UILabel timeLabel;
+	public UILabel scoreLabel;
+	public UILabel gameOverScore;
+
+
 
 	[Header ("Public Variables")]
-	public float
-		countdownTime;
+	public float countdownTime;
 	public static int score;
 
 	public static GameManager Instance;
@@ -81,10 +73,12 @@ public class GameManager : MonoBehaviour
 		} else if (countdownTime < 1 && countdownTime > 0) {
 			timeLabel.text = "GO";
 		} else if (countdownTime < 0 && countdownTime > -1) {
-			NGUITools.SetActive (gameStart.gameObject, false);
+			//UIWindow.Hide(countdownScreen);
+			NGUITools.SetActive (countdownScreen.gameObject, false);
 			this.gs = gameState.running;
-			Debug.LogError ("Game state: " + gs);
-			NGUITools.SetActive (uiHolder.gameObject, true);
+			Debug.LogWarning ("Game state: " + gs);
+			UIWindow.Show(uiHolder);
+			//NGUITools.SetActive (uiHolder.gameObject, true);
 			GenerateMeteors ();
 		}
 
@@ -96,9 +90,10 @@ public class GameManager : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			this.gs = gameState.paused;
-			Debug.LogError ("Game state: " + gs);
+			Debug.LogWarning ("Game state: " + gs);
 			if (!quitGame.gameObject.activeSelf) {
-				NGUITools.SetActive (quitGame.gameObject, true);
+				UIWindow.Show(quitGame);
+				//NGUITools.SetActive (quitGame.gameObject, true);
 				MeteorsMotion.meteorSpeed = 0;
 			}
 
@@ -108,8 +103,8 @@ public class GameManager : MonoBehaviour
 	void GenerateMeteors ()
 	{
 		MeteorsMotion.meteorSpeed = -1f;
-		InvokeRepeating ("SpawnBigMeteor", 0.13f, 1.3f);
-		InvokeRepeating ("SpawnSmallMeteor", 0.13f, 1.3f);
+		InvokeRepeating ("SpawnBigMeteor", 1, 1f);
+		InvokeRepeating ("SpawnSmallMeteor", 1, 1f);
 
 	}
 
@@ -139,6 +134,7 @@ public class GameManager : MonoBehaviour
 			score = 0;
 		
 		scoreLabel.text = "" + score;
+		gameOverScore.text = "" + score;
 	}
 
 	public void AddPoints (int pointsToAdd)
@@ -151,9 +147,13 @@ public class GameManager : MonoBehaviour
 	void GameOver ()
 	{
 		this.gs = gameState.paused;
-		Debug.LogError ("Game state: " + gs);
+		Debug.LogWarning ("Game state: " + gs);
 		if (!gameOver.gameObject.activeSelf) {
 			//NGUITools.SetActive (gameOver.gameObject, true);
+			UIWindow.Show (gameOver);
+
+			if(uiHolder.gameObject.activeSelf)
+				UIWindow.Hide (uiHolder);
 			UIWindow.Show (gameOver);
 			MeteorsMotion.meteorSpeed = 0;
 		}
@@ -161,12 +161,12 @@ public class GameManager : MonoBehaviour
 
 	public void IsPlayerAlive ()
 	{
-		Debug.LogError (house.activeSelf);
-		Debug.LogError (trees.activeSelf);
-		Debug.LogError (tractor.activeSelf);
+		//Debug.LogError (house.activeSelf);
+		//Debug.LogError (trees.activeSelf);
+		//Debug.LogError (tractor.activeSelf);
 		if (!house.activeSelf && !trees.activeSelf && !tractor.activeSelf) {
 			GameOver ();
-			Debug.LogError ("Player dead");
+			Debug.LogWarning ("Player dead");
 		}
 	}
 }
