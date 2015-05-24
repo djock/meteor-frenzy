@@ -1,14 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Countdown.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="11" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="151" Column="5" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="66" Column="12" />
+      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="14" Column="41" />
       <File FileName="Assets\Scripts\CloudSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\QuitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CancelButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuitGame.cs" Line="10" Column="3" />
+      <File FileName="Assets\Scripts\CancelButton.cs" Line="14" Column="1" />
       <File FileName="Assets\Scripts\DestroyMeteors.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MeteorsMotion.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ReloadScene.cs" Line="8" Column="37" />
+      <File FileName="Assets\Scripts\RestartGame.cs" Line="11" Column="3" />
+      <File FileName="Assets\Scripts\Countdown.cs" Line="45" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

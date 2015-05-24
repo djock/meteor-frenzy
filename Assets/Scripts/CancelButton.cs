@@ -7,6 +7,7 @@ public class CancelButton : MonoBehaviour {
 
 	void OnClick()
 	{
-		NGUITools.SetActive (panel.gameObject, false);
+		UIWindow.Hide (panel);
+		MeteorsMotion.meteorSpeed = -1;
 	}
 }

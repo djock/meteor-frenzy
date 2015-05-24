@@ -23,25 +23,25 @@ public class GameManager : MonoBehaviour
 
 	[Header ("UI Components")]
 	public GameObject meteorHolder;
-	public UILabel timeLabel;
 	public UILabel scoreLabel;
 	public UILabel gameOverScore;
+	public UILabel highScoreLabel;
 
 
 
 	[Header ("Public Variables")]
-	public float countdownTime;
 	public static int score;
+	public static int highScore;
 
 	public static GameManager Instance;
 
-	enum gameState
+	public enum gameState
 	{
 		running,
 		paused,
 	};
 
-	gameState gs;
+	public  gameState gs;
 
 	void Awake ()
 	{
@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+
 		score = 0;
+		highScore = PlayerPrefs.GetInt ("highscore");
 
 		this.gs = gameState.paused;
 		Debug.LogWarning ("Game state: " + gs);
@@ -62,28 +64,11 @@ public class GameManager : MonoBehaviour
 	{
 		Quit ();
 		Score ();
+		HighScore ();
+		highScoreLabel.text = "" + highScore;
 	}
 
-	public void CountDownTimer ()
-	{
-		// 3,2,1 - GO
-		if (countdownTime > 1) {
-			timeLabel.text = "" + (int)countdownTime;
-			//Debug.Log("Seconds: " + timeRemaining);
-		} else if (countdownTime < 1 && countdownTime > 0) {
-			timeLabel.text = "GO";
-		} else if (countdownTime < 0 && countdownTime > -1) {
-			//UIWindow.Hide(countdownScreen);
-			NGUITools.SetActive (countdownScreen.gameObject, false);
-			this.gs = gameState.running;
-			Debug.LogWarning ("Game state: " + gs);
-			UIWindow.Show(uiHolder);
-			//NGUITools.SetActive (uiHolder.gameObject, true);
-			GenerateMeteors ();
-		}
 
-		countdownTime -= Time.deltaTime;
-	}
 
 	void Quit ()
 	{
@@ -100,8 +85,10 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void GenerateMeteors ()
+	public void GenerateMeteors ()
 	{
+		CancelInvoke ("SpawnBigMeteor");
+		CancelInvoke ("SpawnSmallMeteor");
 		MeteorsMotion.meteorSpeed = -1f;
 		InvokeRepeating ("SpawnBigMeteor", 1, 1f);
 		InvokeRepeating ("SpawnSmallMeteor", 1, 1f);
@@ -137,26 +124,47 @@ public class GameManager : MonoBehaviour
 		gameOverScore.text = "" + score;
 	}
 
+	public void EnablePlayerAssets()
+	{
+		score = 0;
+		NGUITools.SetActive (GameManager.Instance.trees,true);
+		NGUITools.SetActive (GameManager.Instance.house,true);
+		NGUITools.SetActive (GameManager.Instance.tractor,true);
+	}
+	
+	void HighScore()
+	{
+		if (score > highScore) {
+			highScore = score;
+			Debug.LogError ("Score: " + highScore);
+
+			PlayerPrefs.SetInt ("highscore", highScore);
+			PlayerPrefs.Save ();
+
+			}
+		}
+
+
 	public void AddPoints (int pointsToAdd)
 	{
 		score += pointsToAdd;
 		
 		Debug.Log ("Score: " + score);
+
 	}
 
 	void GameOver ()
 	{
 		this.gs = gameState.paused;
 		Debug.LogWarning ("Game state: " + gs);
-		if (!gameOver.gameObject.activeSelf) {
-			//NGUITools.SetActive (gameOver.gameObject, true);
-			UIWindow.Show (gameOver);
 
-			if(uiHolder.gameObject.activeSelf)
-				UIWindow.Hide (uiHolder);
-			UIWindow.Show (gameOver);
-			MeteorsMotion.meteorSpeed = 0;
+		if (uiHolder.gameObject.activeSelf) {
+			UIWindow.Hide (uiHolder);
 		}
+		UIWindow.Show (gameOver);
+
+		CancelInvoke ("SpawnBigMeteor");
+		CancelInvoke ("SpawnSmallMeteor");
 	}
 
 	public void IsPlayerAlive ()
