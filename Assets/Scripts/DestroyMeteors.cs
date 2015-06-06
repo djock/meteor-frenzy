@@ -19,7 +19,8 @@ public class DestroyMeteors : MonoBehaviour
 			if (hit.collider != null) {
 				if (hit.collider.gameObject == gameObject) {	
 					GameManager.Instance.AddPoints (pointsToAdd);
-					Destroy (gameObject);
+                    GameManager.Instance.MeteorExplosion(transform.position);
+                    Destroy (gameObject);    
 				}
 			}
 		}

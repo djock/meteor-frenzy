@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 	[Header ("Player Assets")]
 	public GameObject house;
 	public GameObject trees;
-	public GameObject tractor;
+	public GameObject vehicle;
+    public GameObject fence;
 
-	[Header ("Window Holder")]
+    [Header ("Window Holder")]
 	public UIPanel menuPanel;
 	public UIPanel countdownScreen;
 	public UIPanel uiHolder;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 	public UILabel scoreLabel;
 	public UILabel gameOverScore;
 	public UILabel highScoreLabel;
+    public ParticleSystem meteorDestroyParticle;
 
 
 
@@ -129,14 +131,15 @@ public class GameManager : MonoBehaviour
 		score = 0;
 		NGUITools.SetActive (GameManager.Instance.trees,true);
 		NGUITools.SetActive (GameManager.Instance.house,true);
-		NGUITools.SetActive (GameManager.Instance.tractor,true);
-	}
+		NGUITools.SetActive (GameManager.Instance.vehicle,true);
+        NGUITools.SetActive(GameManager.Instance.fence, true);
+    }
 	
 	void HighScore()
 	{
 		if (score > highScore) {
 			highScore = score;
-			Debug.LogError ("Score: " + highScore);
+			///Debug.LogError ("High Score: " + highScore);
 
 			PlayerPrefs.SetInt ("highscore", highScore);
 			PlayerPrefs.Save ();
@@ -171,10 +174,21 @@ public class GameManager : MonoBehaviour
 	{
 		//Debug.LogError (house.activeSelf);
 		//Debug.LogError (trees.activeSelf);
-		//Debug.LogError (tractor.activeSelf);
-		if (!house.activeSelf && !trees.activeSelf && !tractor.activeSelf) {
+		//Debug.LogError (vehicle.activeSelf);
+		if (!house.activeSelf && !trees.activeSelf && !vehicle.activeSelf && !fence.activeSelf) {
 			GameOver ();
 			Debug.LogWarning ("Player dead");
 		}
 	}
+
+    public void MeteorExplosion(Vector3 position) {
+        instantiate(meteorDestroyParticle, position);
+    }
+
+    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
+    {
+        ParticleSystem newParticleSystem = Instantiate(prefab, position, Quaternion.identity) as ParticleSystem;
+        Destroy(newParticleSystem.gameObject,newParticleSystem.startLifetime);
+        return newParticleSystem;
+    }
 }

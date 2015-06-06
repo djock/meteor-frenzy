@@ -8,6 +8,6 @@ public class CancelButton : MonoBehaviour {
 	void OnClick()
 	{
 		UIWindow.Hide (panel);
-		MeteorsMotion.meteorSpeed = -1;
+        GameManager.Instance.GenerateMeteors();
 	}
 }

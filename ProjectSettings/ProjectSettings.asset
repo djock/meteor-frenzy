@@ -12,7 +12,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: IonutMocanu
-  productName: meteorgame
+  productName: Meteor Frenzy
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.IonutMocanu.MeteorGame
+  bundleIdentifier: com.IonutMocanu.MeteorFrenzy
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -139,6 +139,20 @@ PlayerSettings:
     m_Icons:
     - m_Icon: {fileID: 0}
       m_Size: 128
+  - m_BuildTarget: Android
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 42b1d439f239c744489a26e25505f359, type: 3}
+      m_Size: 192
+    - m_Icon: {fileID: 2800000, guid: 649214778f041204ba082f50268413c3, type: 3}
+      m_Size: 144
+    - m_Icon: {fileID: 2800000, guid: 1b3adfe550a245946a412bf5e5ba2598, type: 3}
+      m_Size: 96
+    - m_Icon: {fileID: 2800000, guid: f211ba73fec3b7c42859fe51f955a769, type: 3}
+      m_Size: 72
+    - m_Icon: {fileID: 2800000, guid: 7c124a918e85c9840906c55c91c11257, type: 3}
+      m_Size: 48
+    - m_Icon: {fileID: 2800000, guid: fcd35ef82c94c304e810caf9cbd70161, type: 3}
+      m_Size: 36
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -212,6 +226,7 @@ PlayerSettings:
   psp2NPTrophyPackPath: 
   psp2NPSupportGBMorGJP: 0
   psp2NPAgeRating: 12
+  psp2NPTitleDatPath: 
   psp2NPCommsID: 
   psp2NPCommunicationsID: 
   psp2NPCommsPassphrase: 
@@ -226,6 +241,7 @@ PlayerSettings:
   psp2PatchOriginalPackage: 
   psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
+  psp2MemoryExpansionMode: 0
   psp2DRMType: 0
   psp2StorageType: 0
   psp2MediaCapacity: 0
@@ -361,6 +377,7 @@ PlayerSettings:
   XboxOnePackagingOverridePath: 
   XboxOneAppManifestOverridePath: 
   XboxOnePackageEncryption: 0
+  XboxOnePackageUpdateGranularity: 2
   XboxOneDescription: 
   XboxOneIsContentPackage: 0
   XboxOneEnableGPUVariability: 0

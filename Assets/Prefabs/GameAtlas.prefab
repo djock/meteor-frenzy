@@ -41,22 +41,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 245b34401ffa9374994bdb0612ef0d6d, type: 2}
   mSprites:
-  - name: 678085-house-128
-    x: 966
-    y: 71
-    width: 122
-    height: 107
+  - name: 123babalabordei
+    x: 769
+    y: 1607
+    width: 800
+    height: 441
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 0
     paddingRight: 0
-    paddingTop: 0
+    paddingTop: 359
     paddingBottom: 0
   - name: background
     x: 0
-    y: 256
+    y: 1280
     width: 768
     height: 768
     borderLeft: 0
@@ -67,9 +67,48 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: car_1
+    x: 769
+    y: 1376
+    width: 625
+    height: 230
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: car_2
+    x: 1228
+    y: 1086
+    width: 626
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: car_3
+    x: 601
+    y: 1081
+    width: 626
+    height: 198
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: cloud1
-    x: 501
-    y: 83
+    x: 601
+    y: 413
     width: 249
     height: 172
     borderLeft: 0
@@ -81,8 +120,8 @@ MonoBehaviour:
     paddingTop: 213
     paddingBottom: 247
   - name: cloud2
-    x: 769
-    y: 833
+    x: 897
+    y: 889
     width: 321
     height: 191
     borderLeft: 0
@@ -94,8 +133,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: cloud3
-    x: 769
-    y: 623
+    x: 601
+    y: 586
     width: 288
     height: 209
     borderLeft: 0
@@ -107,8 +146,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: cloud4
-    x: 769
-    y: 310
+    x: 601
+    y: 275
     width: 200
     height: 137
     borderLeft: 0
@@ -120,8 +159,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: cloud5
-    x: 769
-    y: 63
+    x: 601
+    y: 28
     width: 196
     height: 115
     borderLeft: 0
@@ -133,8 +172,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Command-Refresh-128
-    x: 1091
-    y: 654
+    x: 1855
+    y: 1151
     width: 128
     height: 128
     borderLeft: 0
@@ -146,8 +185,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Favorites-128
-    x: 1091
-    y: 277
+    x: 1471
+    y: 957
     width: 128
     height: 123
     borderLeft: 0
@@ -158,9 +197,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 3
     paddingBottom: 2
+  - name: fence
+    x: 0
+    y: 813
+    width: 600
+    height: 466
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Heart-128
-    x: 1091
-    y: 401
+    x: 1600
+    y: 957
     width: 128
     height: 123
     borderLeft: 0
@@ -172,8 +224,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 2
   - name: Home-128 (1)
-    x: 1091
-    y: 160
+    x: 406
+    y: 521
     width: 128
     height: 116
     borderLeft: 0
@@ -184,9 +236,61 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 6
     paddingBottom: 6
+  - name: house_1
+    x: 601
+    y: 796
+    width: 295
+    height: 284
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: house_2
+    x: 0
+    y: 517
+    width: 405
+    height: 295
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: house_3
+    x: 1570
+    y: 1320
+    width: 454
+    height: 315
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: house2
+    x: 1570
+    y: 1636
+    width: 385
+    height: 412
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Media-Play-128
-    x: 1091
-    y: 31
+    x: 1956
+    y: 1920
     width: 89
     height: 128
     borderLeft: 0
@@ -198,8 +302,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: meteorBig
-    x: 562
-    y: 33
+    x: 858
+    y: 1283
     width: 60
     height: 49
     borderLeft: 0
@@ -211,8 +315,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: meteorSmall
-    x: 501
-    y: 25
+    x: 1029
+    y: 1318
     width: 60
     height: 57
     borderLeft: 0
@@ -225,7 +329,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: mountain
     x: 0
-    y: 22
+    y: 283
     width: 500
     height: 233
     borderLeft: 0
@@ -237,8 +341,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: one
-    x: 0
-    y: 5
+    x: 919
+    y: 1316
     width: 16
     height: 16
     borderLeft: 5
@@ -250,8 +354,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: potion
-    x: 946
-    y: 463
+    x: 1395
+    y: 1447
     width: 142
     height: 159
     borderLeft: 0
@@ -263,8 +367,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ranks
-    x: 1091
-    y: 783
+    x: 1395
+    y: 1318
     width: 128
     height: 128
     borderLeft: 0
@@ -276,8 +380,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Settings-02-128
-    x: 1091
-    y: 525
+    x: 1219
+    y: 952
     width: 125
     height: 128
     borderLeft: 0
@@ -288,9 +392,22 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 0
     paddingBottom: 0
+  - name: SHIT
+    x: 858
+    y: 1333
+    width: 170
+    height: 42
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: tile
-    x: 1248
-    y: 937
+    x: 769
+    y: 1288
     width: 88
     height: 87
     borderLeft: 0
@@ -302,8 +419,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tile_2
-    x: 769
-    y: 448
+    x: 406
+    y: 638
     width: 176
     height: 174
     borderLeft: 20
@@ -314,11 +431,11 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: tractor
-    x: 1091
-    y: 912
-    width: 156
-    height: 112
+  - name: title
+    x: 0
+    y: 62
+    width: 526
+    height: 220
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -328,8 +445,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tree
-    x: 970
-    y: 317
+    x: 1729
+    y: 950
     width: 119
     height: 130
     borderLeft: 0
@@ -341,8 +458,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: trees
-    x: 769
-    y: 179
+    x: 601
+    y: 144
     width: 194
     height: 130
     borderLeft: 0
@@ -354,8 +471,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Volume-128
-    x: 964
-    y: 181
+    x: 1345
+    y: 952
     width: 125
     height: 128
     borderLeft: 0
