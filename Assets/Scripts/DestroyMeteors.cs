@@ -24,7 +24,15 @@ public class DestroyMeteors : MonoBehaviour
 				}
 			}
 		}
-		
-		
 	}
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            GameManager.Instance.MeteorExplosion(transform.position);
+            Destroy(gameObject);
+        }
+    }
+
 }
