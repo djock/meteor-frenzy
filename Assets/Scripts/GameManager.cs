@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour
 		CancelInvoke ("SpawnBigMeteor");
 		CancelInvoke ("SpawnSmallMeteor");
 		MeteorsMotion.meteorSpeed = -1f;
-		InvokeRepeating ("SpawnBigMeteor", 1, 1f);
-		InvokeRepeating ("SpawnSmallMeteor", 1, 1f);
+		InvokeRepeating ("SpawnBigMeteor", 0.8f, 1f);
+		InvokeRepeating ("SpawnSmallMeteor", 0.5f, 1f);
 
 	}
 
@@ -119,12 +119,20 @@ public class GameManager : MonoBehaviour
 
 	void Score ()
 	{
-		if (score < 0)
-			score = 0;
+        if (score < 0)
+        {
+            score = 0;
+        }
 		
 		scoreLabel.text = "" + score;
 		gameOverScore.text = "" + score;
-	}
+
+        if(score > 100) { 
+            Time.timeScale = 0.85F;
+            Debug.LogWarning("Time slowed down");
+        }
+
+    }
 
 	public void EnablePlayerAssets()
 	{
