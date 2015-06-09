@@ -38,8 +38,8 @@ public class Countdown : MonoBehaviour {
 			GameManager.Instance.gs = GameManager.gameState.running;
 			Debug.LogWarning ("Game state: " + GameManager.Instance.gs);
 			UIWindow.Show (GameManager.Instance.uiHolder);
-			//NGUITools.SetActive (uiHolder.gameObject, true);
-			GameManager.Instance.GenerateMeteors ();
+            //NGUITools.SetActive (uiHolder.gameObject, true);
+            GameManager.Instance.GenerateMeteors ();
 			CancelInvoke ("CountDownTime");
 			GameManager.Instance.EnablePlayerAssets ();
 

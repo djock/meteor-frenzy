@@ -128,9 +128,17 @@ public class GameManager : MonoBehaviour
 		gameOverScore.text = "" + score;
 
         if(score > 100) { 
-            Time.timeScale = 0.85F;
-            Debug.LogWarning("Time slowed down");
+            Time.timeScale = 1.1F;
         }
+        if (score > 200)
+        {
+            Time.timeScale = 1.2F;
+        }
+        if (score > 300)
+        {
+            Time.timeScale = 1.3F;
+        }
+
 
     }
 
