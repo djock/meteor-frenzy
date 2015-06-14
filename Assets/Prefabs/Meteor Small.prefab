@@ -29,6 +29,7 @@ GameObject:
   - 50: {fileID: 5077158}
   - 114: {fileID: 11410190}
   - 60: {fileID: 6083548}
+  - 114: {fileID: 11431204}
   m_Layer: 8
   m_Name: Meteor Small
   m_TagString: Meteor
@@ -124,6 +125,21 @@ MonoBehaviour:
   velocity: {x: 0, y: -2}
   range: 1
   rotationSpeed: 0
+--- !u!114 &11431204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 16e4d7d01c683684485b31ab86115ffa, type: 3}
+  trigger: 3
+  volume: .800000012
+  pitch: 1
 --- !u!114 &11467440
 MonoBehaviour:
   m_ObjectHideFlags: 1

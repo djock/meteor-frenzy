@@ -192,7 +192,6 @@
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\ReloadScene.cs" />
-     <Compile Include="Assets\Scripts\RestartGame.cs" />
      <Compile Include="Assets\Scripts\UI\UIButtonComponent.cs" />
      <Compile Include="Assets\Scripts\UI\UIUpgradeWindow.cs" />
      <Compile Include="Assets\Scripts\UI\UIWindow.cs" />
