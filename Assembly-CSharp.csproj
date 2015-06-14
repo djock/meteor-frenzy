@@ -185,6 +185,7 @@
      <Compile Include="Assets\Scripts\CloudMotion.cs" />
      <Compile Include="Assets\Scripts\CloudSpawn.cs" />
      <Compile Include="Assets\Scripts\Countdown.cs" />
+     <Compile Include="Assets\Scripts\DeletePlayerPrefs.cs" />
      <Compile Include="Assets\Scripts\DestroyMeteors.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\MeteorsMotion.cs" />

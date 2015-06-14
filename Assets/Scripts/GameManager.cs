@@ -28,14 +28,17 @@ public class GameManager : MonoBehaviour
 	public UILabel gameOverScore;
 	public UILabel highScoreLabel;
     public ParticleSystem meteorDestroyParticle;
-
+    public UISprite scoreBackground;
+    public GameObject newHighScore;
 
 
 	[Header ("Public Variables")]
 	public static int score;
 	public static int highScore;
+    public TweenColor scoreBackgroundColor;
+    public TweenScale scoreBackgroundSize;
 
-	public static GameManager Instance;
+    public static GameManager Instance;
 
 	public enum gameState
 	{
@@ -48,76 +51,97 @@ public class GameManager : MonoBehaviour
 	void Awake ()
 	{
 		Instance = this;
-	}
+        StartCoroutine(MeteorDifficulty());
+    }
 
-	// Use this for initialization
-	void Start ()
+    void Start ()
 	{
+        //StartCoroutine(MeteorDifficulty());
 
-		score = 0;
+        score = 0;
 		highScore = PlayerPrefs.GetInt ("highscore");
 
 		this.gs = gameState.paused;
 		Debug.LogWarning ("Game state: " + gs);
-	}
+
+        scoreBackgroundColor = scoreBackground.GetComponent<TweenColor>();
+        scoreBackgroundSize = scoreBackground.GetComponent<TweenScale>();
+
+    }
 	
-	// Update is called once per frame
 	void Update ()
 	{
 		Quit ();
 		Score ();
 		HighScore ();
 		highScoreLabel.text = "" + highScore;
-	}
+    }
 
+    public void GenerateMeteors()
+    {
+        CancelInvoke("SpawnBigMeteor");
+        CancelInvoke("SpawnSmallMeteor");
+        MeteorsMotion.meteorSpeed = -1f;
+        InvokeRepeating("SpawnBigMeteor", 0.8f, 1f);
+        InvokeRepeating("SpawnSmallMeteor", 0.5f, 1f);
 
+    }
 
-	void Quit ()
-	{
+    void SpawnBigMeteor()
+    {
+        if (this.gs == gameState.running)
+        {
+            NGUITools.AddChild(meteorHolder, meteorBig);
+            //Instantiate (meteorBig);
+        }
+    }
 
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			this.gs = gameState.paused;
-			Debug.LogWarning ("Game state: " + gs);
-			if (!quitGame.gameObject.activeSelf) {
-				UIWindow.Show(quitGame);
-				//NGUITools.SetActive (quitGame.gameObject, true);
-				MeteorsMotion.meteorSpeed = 0;
-			}
+    void SpawnSmallMeteor()
+    {
+        if (this.gs == gameState.running)
+        {
+            var go = NGUITools.AddChild(meteorHolder, meteorSmall);
+            var randY = Random.Range(-150, -200);
+            var position = new Vector3(0, (float)randY, 0);
 
-		}
-	}
+            go.transform.localPosition = position;
+            //Instantiate (meteorSmall);
+        }
+    }
 
-	public void GenerateMeteors ()
-	{
-		CancelInvoke ("SpawnBigMeteor");
-		CancelInvoke ("SpawnSmallMeteor");
-		MeteorsMotion.meteorSpeed = -1f;
-		InvokeRepeating ("SpawnBigMeteor", 0.8f, 1f);
-		InvokeRepeating ("SpawnSmallMeteor", 0.5f, 1f);
+    public void MeteorExplosion(Vector3 position)
+    {
+        instantiate(meteorDestroyParticle, position);
+    }
 
-	}
+    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
+    {
+        ParticleSystem newParticleSystem = Instantiate(prefab, position, Quaternion.identity) as ParticleSystem;
+        Destroy(newParticleSystem.gameObject, newParticleSystem.startLifetime);
+        return newParticleSystem;
+    }
 
-	void SpawnBigMeteor ()
-	{
-		if (this.gs == gameState.running) {
-			NGUITools.AddChild (meteorHolder, meteorBig);
-			//Instantiate (meteorBig);
-		}
-	}
+    IEnumerator MeteorDifficulty()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(7f);
 
-	void SpawnSmallMeteor ()
-	{
-		if (this.gs == gameState.running) {
-			var go = NGUITools.AddChild (meteorHolder, meteorSmall);
-			var randY = Random.Range (-150, -200);
-			var position = new Vector3 (0, (float)randY, 0);
+            if (this.gs == gameState.running)
+            {
+                Time.timeScale += 0.075f;
+                //Debug.LogWarning("Timescale: " + Time.timeScale);
+            }
+        }
+    }
+    
+    public void AddPoints(int pointsToAdd)
+    {
+        score += pointsToAdd;
+        Debug.Log ("Score: " + score);
+    }
 
-			go.transform.localPosition = position;
-			//Instantiate (meteorSmall);
-		}
-	}
-
-	void Score ()
+    void Score ()
 	{
         if (score < 0)
         {
@@ -126,85 +150,82 @@ public class GameManager : MonoBehaviour
 		
 		scoreLabel.text = "" + score;
 		gameOverScore.text = "" + score;
-
-        if(score > 100) { 
-            Time.timeScale = 1.1F;
-        }
-        if (score > 200)
-        {
-            Time.timeScale = 1.2F;
-        }
-        if (score > 300)
-        {
-            Time.timeScale = 1.3F;
-        }
-
-
     }
 
-	public void EnablePlayerAssets()
-	{
-		score = 0;
-		NGUITools.SetActive (GameManager.Instance.trees,true);
-		NGUITools.SetActive (GameManager.Instance.house,true);
-		NGUITools.SetActive (GameManager.Instance.vehicle,true);
-        NGUITools.SetActive(GameManager.Instance.fence, true);
-    }
-	
 	void HighScore()
 	{
 		if (score > highScore) {
+
 			highScore = score;
-			///Debug.LogError ("High Score: " + highScore);
+			Debug.LogWarning ("High Score: " + highScore);
 
 			PlayerPrefs.SetInt ("highscore", highScore);
 			PlayerPrefs.Save ();
 
-			}
-		}
+            scoreBackgroundColor.enabled = true;
+            scoreBackgroundSize.enabled = true;
 
-
-	public void AddPoints (int pointsToAdd)
-	{
-		score += pointsToAdd;
-		
-		Debug.Log ("Score: " + score);
-
-	}
-
-	void GameOver ()
-	{
-		this.gs = gameState.paused;
-		Debug.LogWarning ("Game state: " + gs);
-
-		if (uiHolder.gameObject.activeSelf) {
-			UIWindow.Hide (uiHolder);
-		}
-		UIWindow.Show (gameOver);
-
-		CancelInvoke ("SpawnBigMeteor");
-		CancelInvoke ("SpawnSmallMeteor");
-	}
-
-	public void IsPlayerAlive ()
-	{
-		//Debug.LogError (house.activeSelf);
-		//Debug.LogError (trees.activeSelf);
-		//Debug.LogError (vehicle.activeSelf);
-		if (!house.activeSelf && !trees.activeSelf && !vehicle.activeSelf && !fence.activeSelf) {
-			GameOver ();
-			Debug.LogWarning ("Player dead");
-		}
-	}
-
-    public void MeteorExplosion(Vector3 position) {
-        instantiate(meteorDestroyParticle, position);
+            NGUITools.SetActive(GameManager.Instance.newHighScore, true);
+        }
+        
     }
 
-    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
+    public void EnablePlayerAssets()
     {
-        ParticleSystem newParticleSystem = Instantiate(prefab, position, Quaternion.identity) as ParticleSystem;
-        Destroy(newParticleSystem.gameObject,newParticleSystem.startLifetime);
-        return newParticleSystem;
+        score = 0;
+        NGUITools.SetActive(GameManager.Instance.trees, true);
+        NGUITools.SetActive(GameManager.Instance.house, true);
+        NGUITools.SetActive(GameManager.Instance.vehicle, true);
+        NGUITools.SetActive(GameManager.Instance.fence, true);
+
+        scoreBackgroundSize.enabled = false;
+        scoreBackgroundColor.enabled = false;
+        NGUITools.SetActive(GameManager.Instance.newHighScore, false);
     }
+
+    void GameOver()
+    {
+        this.gs = gameState.paused;
+        Debug.LogWarning("Game state: " + gs);
+
+        if (uiHolder.gameObject.activeSelf)
+        {
+            UIWindow.Hide(uiHolder);
+        }
+
+        UIWindow.Show(gameOver);
+
+        CancelInvoke("SpawnBigMeteor");
+        CancelInvoke("SpawnSmallMeteor");
+    }
+
+    public void IsPlayerAlive()
+    {
+        //Debug.LogError (house.activeSelf);
+        //Debug.LogError (trees.activeSelf);
+        //Debug.LogError (vehicle.activeSelf);
+        if (!house.activeSelf && !trees.activeSelf && !vehicle.activeSelf && !fence.activeSelf)
+        {
+            GameOver();
+            Debug.LogWarning("Player dead");
+        }
+    }
+
+    void Quit()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            this.gs = gameState.paused;
+            Debug.LogWarning("Game state: " + gs);
+            if (!quitGame.gameObject.activeSelf)
+            {
+                UIWindow.Show(quitGame);
+                //NGUITools.SetActive (quitGame.gameObject, true);
+                MeteorsMotion.meteorSpeed = 0;
+            }
+
+        }
+    }
+
 }

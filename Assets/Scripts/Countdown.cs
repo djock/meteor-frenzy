@@ -32,28 +32,31 @@ public class Countdown : MonoBehaviour {
 			timeLabel.text = "GO";
 			//Debug.LogError ("2");
 		} else {
+
 			//Debug.LogError ("3");
 			//UIWindow.Close();
 			//NGUITools.SetActive (countdownScreen.gameObject, false);
+
 			GameManager.Instance.gs = GameManager.gameState.running;
-			Debug.LogWarning ("Game state: " + GameManager.Instance.gs);
+            
+            //Debug.LogWarning ("Game state: " + GameManager.Instance.gs);
+
 			UIWindow.Show (GameManager.Instance.uiHolder);
-            //NGUITools.SetActive (uiHolder.gameObject, true);
+
             GameManager.Instance.GenerateMeteors ();
 			CancelInvoke ("CountDownTime");
 			GameManager.Instance.EnablePlayerAssets ();
 
-			
-		}
-		
+            Time.timeScale = 1f;
+
+           // GameManager.Instance.scoreBackgroundSize.enabled = false;
+           // GameManager.Instance.scoreBackgroundColor.enabled = false;
+        }
 	}
-
-
-
+    
 	void OnDisable()
 	{
 		CancelInvoke ("CountDownTime");
-
 	}
-	
+    
 }
