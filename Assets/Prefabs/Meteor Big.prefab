@@ -64,6 +64,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5017858
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -72,11 +73,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &6081880
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -148,7 +149,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 152dd252ec099154fa891f0f52ae5126, type: 3}
+  mSprite: {fileID: 21300000, guid: 860ad4397c86e1744bb71713fff7ce07, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -202,7 +203,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11484926, guid: e5cb12c676039b848a0b4d7b22f2a0a6, type: 2}
+  mAtlas: {fileID: 0}
   mSpriteName: bigFlame
   mFillCenter: 1
 --- !u!114 &11479094
@@ -216,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 16e4d7d01c683684485b31ab86115ffa, type: 3}
+  audioClip: {fileID: 8300000, guid: 6febdff7f117c094582ba6df7ebb8d9a, type: 3}
   trigger: 3
   volume: .800000012
   pitch: 1
@@ -252,7 +253,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: mSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 860ad4397c86e1744bb71713fff7ce07,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6febdff7f117c094582ba6df7ebb8d9a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178558}

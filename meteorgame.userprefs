@@ -1,21 +1,28 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Countdown.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CloudSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\QuitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CancelButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UICountdownWindow.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\DestroyMeteors.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="114" Column="21" />
+      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MeteorsMotion.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuitGame.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ReloadScene.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RestartGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Countdown.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="104" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="108" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="109" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="110" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="114" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="116" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="117" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="118" column="1" />
+      <Breakpoint file="C:\Unity\air\Assets\Scripts\UI\UITargetHolder.cs" line="103" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

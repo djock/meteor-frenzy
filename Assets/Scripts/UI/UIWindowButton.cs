@@ -26,11 +26,11 @@ public class UIWindowButton : MonoBehaviour
 
 	void OnClick ()
 	{
-		if (requiresFullVersion )
-		{
-			UIUpgradeWindow.Show();
-			return;
-		}
+//		if (requiresFullVersion )
+//		{
+//			UIUpgradeWindow.Show();
+//			return;
+//		}
 
 		switch (action)
 		{
