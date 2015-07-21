@@ -1,14 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Meteors.cs">
     <Files>
-      <File FileName="Assets\Scripts\UICountdownWindow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DestroyMeteors.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="114" Column="21" />
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MeteorsMotion.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\QuitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ReloadScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="189" Column="47" />
+      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="14" Column="41" />
+      <File FileName="Assets\Scripts\UIGameOver.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\UIQuitGame.cs" Line="32" Column="25" />
+      <File FileName="Assets\Scripts\Meteors.cs" Line="10" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

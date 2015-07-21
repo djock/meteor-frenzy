@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         CancelInvoke("SpawnBigMeteor");
         CancelInvoke("SpawnSmallMeteor");
-        MeteorsMotion.meteorSpeed = -1f;
+		Meteors.meteorSpeed = -1f;
         InvokeRepeating("SpawnBigMeteor", 0.8f, 1f);
         InvokeRepeating("SpawnSmallMeteor", 0.5f, 1f);
 
@@ -221,8 +221,6 @@ public class GameManager : MonoBehaviour
             if (!quitGame.gameObject.activeSelf)
             {
                 UIWindow.Show(quitGame);
-                //NGUITools.SetActive (quitGame.gameObject, true);
-                MeteorsMotion.meteorSpeed = 0;
             }
 
         }

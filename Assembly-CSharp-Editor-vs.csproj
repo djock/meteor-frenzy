@@ -127,7 +127,6 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
-     <None Include="Assets\xARM\_Changelog.txt" />
      <None Include="Assets\NGUI\ReadMe - 3.8.0.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />

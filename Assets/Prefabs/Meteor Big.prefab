@@ -25,11 +25,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 482738}
   - 114: {fileID: 11431288}
-  - 114: {fileID: 11498316}
   - 50: {fileID: 5017858}
-  - 114: {fileID: 11490618}
   - 60: {fileID: 6081880}
   - 114: {fileID: 11479094}
+  - 114: {fileID: 11439014}
   m_Layer: 8
   m_Name: Meteor Big
   m_TagString: Meteor
@@ -156,6 +155,20 @@ MonoBehaviour:
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!114 &11439014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a477898323837d248bdc3bf52ab77fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 100
+  velocity: {x: 0, y: -2}
+  range: 1
 --- !u!114 &11447632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,36 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 6febdff7f117c094582ba6df7ebb8d9a, type: 3}
+  audioClip: {fileID: 0}
   trigger: 3
   volume: .800000012
   pitch: 1
---- !u!114 &11490618
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcd02cc75b2dad4c95c45caf17b0e51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsToAdd: 10
---- !u!114 &11498316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3913762594fc4b40a5819b675feba53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: -2}
-  range: 1
-  rotationSpeed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -262,7 +249,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6febdff7f117c094582ba6df7ebb8d9a, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pointsToAdd
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 178558}
