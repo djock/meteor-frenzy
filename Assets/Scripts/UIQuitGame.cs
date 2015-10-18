@@ -10,10 +10,13 @@ public class UIQuitGame : MonoBehaviour {
 
 	void OnDisable()
 	{
-		if (GameManager.Instance.uiHolder.gameObject.activeSelf) {
-			Meteors.meteorSpeed = -1f;
-			GameManager.Instance.gs = GameManager.gameState.running;
-			GameManager.Instance.GenerateMeteors ();
+		if (!GameManager.Instance.mainMenuWindow.gameObject.activeSelf &&
+		    !GameManager.Instance.gameOverWindow.gameObject.activeSelf &&
+		    !GameManager.Instance.countDownWindow.gameObject.activeSelf) {
+			GameManager.Instance.ResumeGame ();
+
+		} else {
+			NGUITools.SetActive (GameManager.Instance.uiHolderWindow.gameObject, false);
 		}
 	}
 
@@ -24,11 +27,6 @@ public class UIQuitGame : MonoBehaviour {
 
 	public void QuitGame()
 	{
-
-		PlayerPrefs.DeleteAll();
-		Debug.Log("Deleted all player prefs.");
-
-//		Debug.Log("Application closed");
-//		Application.Quit ();
+		Application.Quit();
 	}
 }

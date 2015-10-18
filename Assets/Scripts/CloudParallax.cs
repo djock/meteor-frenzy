@@ -15,7 +15,6 @@ public class CloudParallax : MonoBehaviour {
 		this.initialPosition = thisTransform.position;
 
 	}
-	// Update is called once per frame
 	void Update () {
 		float newPosition = Time.deltaTime * scrollSpeed;
 		this.thisTransform.position = thisTransform.position + Vector3.left * newPosition;
@@ -25,7 +24,6 @@ public class CloudParallax : MonoBehaviour {
 	{
 		if (collision.gameObject.name == "DestroyCloud")
 		{
-			Debug.Log("Cloud meets with destroy collider");
 			DisableObject ();
 		}
 	}

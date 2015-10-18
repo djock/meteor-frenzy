@@ -3,13 +3,9 @@ using System.Collections;
 
 public class UIMainMenu : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Start()
+	{
+		GameManager.Instance.gs = GameManager.gameState.paused;
+		GameManager.Instance.uiHolder.SetForMainMenu ();
 	}
 }

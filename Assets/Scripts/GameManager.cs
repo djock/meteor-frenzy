@@ -4,19 +4,19 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
 	[Header ("Player Assets")]
+	public UIWidget playerAssets;
 	public GameObject house;
 	public GameObject trees;
 	public GameObject vehicle;
-    public GameObject fence;
 
     [Header ("Window Holder")]
-	public UIPanel menuPanel;
-	public UIPanel countdownScreen;
-	public UIPanel uiHolder;
+	public UIPanel mainMenuWindow;
+	public UIPanel uiHolderWindow;
+	public UIPanel countDownWindow;
+	public UIPanel gameOverWindow;
 
 	[Header ("Modal Holder")]
 	public UIPanel quitGame;
-	public UIPanel gameOver;
 
 	[Header ("Meteors")]
 	public GameObject meteorBig;
@@ -28,18 +28,19 @@ public class GameManager : MonoBehaviour
 	public UILabel gameOverScore;
 	public UILabel highScoreLabel;
     public ParticleSystem meteorDestroyParticle;
-    public UISprite scoreBackground;
-    public GameObject newHighScore;
 
 
 	[Header ("Public Variables")]
 	public static int score;
 	public static int highScore;
-    public TweenColor scoreBackgroundColor;
-    public TweenScale scoreBackgroundSize;
+
+
+	[Header ("Scripts")]
+	public UIHolder uiHolder;
 
     public static GameManager Instance;
 
+	[HideInInspector]
 	public enum gameState
 	{
 		running,
@@ -56,17 +57,9 @@ public class GameManager : MonoBehaviour
 
     void Start ()
 	{
-        //StartCoroutine(MeteorDifficulty());
-
         score = 0;
 		highScore = PlayerPrefs.GetInt ("highscore");
-
 		this.gs = gameState.paused;
-		Debug.LogWarning ("Game state: " + gs);
-
-        scoreBackgroundColor = scoreBackground.GetComponent<TweenColor>();
-        scoreBackgroundSize = scoreBackground.GetComponent<TweenScale>();
-
     }
 	
 	void Update ()
@@ -87,16 +80,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void SpawnBigMeteor()
+    public void SpawnBigMeteor()
     {
         if (this.gs == gameState.running)
         {
             NGUITools.AddChild(meteorHolder, meteorBig);
-            //Instantiate (meteorBig);
         }
     }
 
-    void SpawnSmallMeteor()
+    public void SpawnSmallMeteor()
     {
         if (this.gs == gameState.running)
         {
@@ -105,9 +97,14 @@ public class GameManager : MonoBehaviour
             var position = new Vector3(0, (float)randY, 0);
 
             go.transform.localPosition = position;
-            //Instantiate (meteorSmall);
         }
     }
+
+	public void DestroyMeteors()
+	{
+		while (meteorHolder.gameObject.transform.childCount > 0)
+			NGUITools.Destroy(meteorHolder.transform.GetChild(0).gameObject);
+	}
 
     public void MeteorExplosion(Vector3 position)
     {
@@ -130,7 +127,6 @@ public class GameManager : MonoBehaviour
             if (this.gs == gameState.running)
             {
                 Time.timeScale += 0.075f;
-                //Debug.LogWarning("Timescale: " + Time.timeScale);
             }
         }
     }
@@ -138,7 +134,6 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int pointsToAdd)
     {
         score += pointsToAdd;
-        Debug.Log ("Score: " + score);
     }
 
     void Score ()
@@ -157,17 +152,13 @@ public class GameManager : MonoBehaviour
 		if (score > highScore) {
 
 			highScore = score;
-			Debug.LogWarning ("High Score: " + highScore);
 
 			PlayerPrefs.SetInt ("highscore", highScore);
 			PlayerPrefs.Save ();
 
-            scoreBackgroundColor.enabled = true;
-            scoreBackgroundSize.enabled = true;
-
-            NGUITools.SetActive(GameManager.Instance.newHighScore, true);
+			uiHolder.scoreBackgroundColor.enabled = true;
+			uiHolder.scoreBackgroundSize.enabled = true;
         }
-        
     }
 
     public void EnablePlayerAssets()
@@ -176,54 +167,57 @@ public class GameManager : MonoBehaviour
         NGUITools.SetActive(GameManager.Instance.trees, true);
         NGUITools.SetActive(GameManager.Instance.house, true);
         NGUITools.SetActive(GameManager.Instance.vehicle, true);
-        NGUITools.SetActive(GameManager.Instance.fence, true);
-
-        scoreBackgroundSize.enabled = false;
-        scoreBackgroundColor.enabled = false;
-        NGUITools.SetActive(GameManager.Instance.newHighScore, false);
     }
 
     void GameOver()
     {
         this.gs = gameState.paused;
-        Debug.LogWarning("Game state: " + gs);
 
-        if (uiHolder.gameObject.activeSelf)
-        {
-            UIWindow.Hide(uiHolder);
-        }
+		uiHolder.SetForGameOver();
 
-        UIWindow.Show(gameOver);
-
-        CancelInvoke("SpawnBigMeteor");
-        CancelInvoke("SpawnSmallMeteor");
+        UIWindow.Show(gameOverWindow);
+		StopMeteors ();
     }
+
+	public void StopMeteors()
+	{
+		CancelInvoke("SpawnBigMeteor");
+		CancelInvoke("SpawnSmallMeteor");
+		Debug.LogError ("Stoping meteors!");
+	}
 
     public void IsPlayerAlive()
     {
-        //Debug.LogError (house.activeSelf);
-        //Debug.LogError (trees.activeSelf);
-        //Debug.LogError (vehicle.activeSelf);
-        if (!house.activeSelf && !trees.activeSelf && !vehicle.activeSelf && !fence.activeSelf)
+        if (!house.activeSelf && !trees.activeSelf && !vehicle.activeSelf)
         {
             GameOver();
-            Debug.LogWarning("Player dead");
         }
     }
 
     void Quit()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             this.gs = gameState.paused;
-            Debug.LogWarning("Game state: " + gs);
             if (!quitGame.gameObject.activeSelf)
             {
-                UIWindow.Show(quitGame);
+				UIWindow.Show(quitGame);
             }
-
         }
     }
 
+	public void ResumeGame()
+	{
+		uiHolder.SetForPlayMode ();
+		Meteors.meteorSpeed = -1f;
+		GameManager.Instance.gs = GameManager.gameState.running;
+		GameManager.Instance.GenerateMeteors ();
+	}
+
+	public void RestartGame()
+	{
+		DestroyMeteors ();
+		Meteors.meteorSpeed = 0;
+		StopMeteors ();
+	}
 }

@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &172670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 473642}
-  - 114: {fileID: 11447632}
-  m_Layer: 8
-  m_Name: Sprite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &178558
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,9 +10,10 @@ GameObject:
   - 4: {fileID: 482738}
   - 114: {fileID: 11431288}
   - 50: {fileID: 5017858}
-  - 60: {fileID: 6081880}
   - 114: {fileID: 11479094}
   - 114: {fileID: 11439014}
+  - 114: {fileID: 11405326}
+  - 58: {fileID: 5864812}
   m_Layer: 8
   m_Name: Meteor Big
   m_TagString: Meteor
@@ -36,18 +21,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &473642
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 87.1999969, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 482738}
-  m_RootOrder: 0
 --- !u!4 &482738
 Transform:
   m_ObjectHideFlags: 1
@@ -55,10 +28,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 767, z: 0}
+  m_LocalPosition: {x: -761, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 473642}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5017858
@@ -77,8 +49,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6081880
-PolygonCollider2D:
+--- !u!58 &5864812
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -88,19 +60,37 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -85.8664169, y: 7.7611618}
-      - {x: -65.3087387, y: -36.7030563}
-      - {x: -26.093483, y: -36.2011337}
-      - {x: 18.9009819, y: -69.9161987}
-      - {x: 84.49823, y: -39.6206131}
-      - {x: .587785184, y: -.809017062}
-      - {x: -.587785363, y: -.809016943}
-      - {x: 86.0613174, y: -40.3419113}
-      - {x: 75.3995056, y: 17.8278885}
-      - {x: 16.7380104, y: 68.993988}
-      - {x: -55.7162476, y: 48.9891663}
+  serializedVersion: 2
+  m_Radius: 100
+--- !u!114 &11405326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 178558}
+  hover: {r: 1, g: 1, b: 1, a: 1}
+  pressed: {r: 1, g: 1, b: 1, a: 1}
+  disabledColor: {r: .5, g: .5, b: .5, a: 1}
+  duration: .200000003
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 11439014}
+    mMethodName: Destroy
+    mParameters: []
+    oneShot: 0
 --- !u!114 &11431288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,59 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a477898323837d248bdc3bf52ab77fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToAdd: 100
-  velocity: {x: 0, y: -2}
+  pointsToAdd: 10
+  velocity: {x: 0, y: -13.5}
   range: 1
---- !u!114 &11447632
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: .117647059}
-  mPivot: 4
-  mWidth: 179
-  mHeight: 306
-  mDepth: 0
-  autoResizeBoxCollider: 0
-  hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: .584905684
-  mType: 0
-  mFillDirection: 4
-  mFillAmount: 1
-  mInvert: 0
-  mFlip: 0
-  centerType: 1
-  leftType: 1
-  rightType: 1
-  bottomType: 1
-  topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: bigFlame
-  mFillCenter: 1
 --- !u!114 &11479094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +182,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: onClick.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: mSprite
       value: 
       objectReference: {fileID: 21300000, guid: 860ad4397c86e1744bb71713fff7ce07,
@@ -252,11 +196,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: pointsToAdd
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: onClick.Array.data[0].mTarget
+      value: 
+      objectReference: {fileID: 11439014}
+    - target: {fileID: 0}
+      propertyPath: onClick.Array.data[0].mMethodName
+      value: Destroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: velocity.y
+      value: -13.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
