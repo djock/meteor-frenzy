@@ -176,6 +176,7 @@ public class GameManager : MonoBehaviour
 		uiHolder.SetForGameOver();
 
         UIWindow.Show(gameOverWindow);
+		DestroyMeteors ();
 		StopMeteors ();
     }
 
