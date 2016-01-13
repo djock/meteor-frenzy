@@ -75,7 +75,7 @@ public class UIHolder : MonoBehaviour {
 		achievementsButton.GetComponent<UIButton> ().isEnabled = false;
 		leaderboardsButton.GetComponent<UIButton> ().isEnabled = false;
 		soundButton.GetComponent<UIButton> ().isEnabled = false;
-		shareButton.GetComponent<UIButton> ().isEnabled = false;
+		//shareButton.GetComponent<UIButton> ().isEnabled = false;
 		adsButton.GetComponent<UIButton> ().isEnabled = false;
 	}
 
