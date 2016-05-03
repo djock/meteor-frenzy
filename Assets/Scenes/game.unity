@@ -357,7 +357,7 @@ Prefab:
     - target: {fileID: 11488962, guid: e9008d8e5cbc9bf46a5e6a581267aeee, type: 2}
       propertyPath: onClick.Array.data[0].mTarget
       value: 
-      objectReference: {fileID: 1022498668}
+      objectReference: {fileID: 0}
     - target: {fileID: 11488962, guid: e9008d8e5cbc9bf46a5e6a581267aeee, type: 2}
       propertyPath: onClick.Array.data[0].mMethodName
       value: callShareApp
@@ -950,7 +950,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 459
+  mWidth: 539
   mHeight: 117
   mDepth: 18
   autoResizeBoxCollider: 0
@@ -1464,7 +1464,7 @@ GameObject:
   - 4: {fileID: 645333754}
   - 114: {fileID: 645333755}
   m_Layer: 8
-  m_Name: Meteors
+  m_Name: Meteors Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1477,7 +1477,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 645333753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323.7372, y: 776, z: 0}
+  m_LocalPosition: {x: 363.25842, y: 776, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1695133959}
@@ -1512,13 +1512,13 @@ MonoBehaviour:
   updateAnchors: 2
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 2
-  mWidth: 647
+  mWidth: 727
   mHeight: 1352
   mDepth: 6
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.4785503
+  aspectRatio: 0.5377219
 --- !u!1 &659561717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1531,7 @@ GameObject:
   - 114: {fileID: 659561720}
   - 81: {fileID: 659561719}
   m_Layer: 8
-  m_Name: Game Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1654,7 +1654,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722839016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -258.7372, y: 512.5, z: 0}
+  m_LocalPosition: {x: -298.25842, y: 512.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1664407281}
@@ -2172,13 +2172,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 1152
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.5616319
+  aspectRatio: 0.6310764
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2763,7 +2763,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 0.49803922}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 1152
   mDepth: 17
   autoResizeBoxCollider: 0
@@ -3018,7 +3018,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.1247613, g: 0.01703071, b: 0.25735295, a: 0.841}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 1152
   mDepth: 12
   autoResizeBoxCollider: 0
@@ -3143,7 +3143,6 @@ GameObject:
   - 20: {fileID: 1022498666}
   - 114: {fileID: 1022498665}
   - 81: {fileID: 1022498664}
-  - 114: {fileID: 1022498668}
   m_Layer: 8
   m_Name: 'UI Camera '
   m_TagString: MainCamera
@@ -3245,17 +3244,6 @@ Transform:
   - {fileID: 1945237167}
   m_Father: {fileID: 1440495698}
   m_RootOrder: 0
---- !u!114 &1022498668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022498663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58ae54ed1916824e90d3ec49012478b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1034815281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,7 +3309,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -3341,7 +3329,7 @@ GameObject:
   - 114: {fileID: 1097291010}
   - 114: {fileID: 1097291011}
   m_Layer: 8
-  m_Name: UI Holder
+  m_Name: UI Elements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3398,7 +3386,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3003
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -3824,7 +3812,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3008
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -4753,7 +4741,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 462128, guid: e9008d8e5cbc9bf46a5e6a581267aeee, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 258.7372
+      value: 298.25842
       objectReference: {fileID: 0}
     - target: {fileID: 462128, guid: e9008d8e5cbc9bf46a5e6a581267aeee, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5365,7 +5353,7 @@ GameObject:
   - 114: {fileID: 1588224029}
   - 54: {fileID: 1588224028}
   m_Layer: 8
-  m_Name: Game Root
+  m_Name: Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6042,7 +6030,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -6301,7 +6289,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -6776,7 +6764,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -6836,7 +6824,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6858,7 +6846,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1944726129 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 137206, guid: e9008d8e5cbc9bf46a5e6a581267aeee, type: 2}
@@ -7026,7 +7014,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.1254902, g: 0.015686275, b: 0.25882354, a: 0.7254902}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 1152
   mDepth: 13
   autoResizeBoxCollider: 0
@@ -7185,7 +7173,7 @@ GameObject:
   - 114: {fileID: 2009468033}
   - 114: {fileID: 2009468034}
   m_Layer: 8
-  m_Name: Countdown
+  m_Name: Countdown screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7349,13 +7337,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.49264705, g: 0.25719073, b: 0.25719073, a: 1}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 56
   mDepth: 2
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 11.553572
+  aspectRatio: 12.982142
   mType: 2
   mFillDirection: 4
   mFillAmount: 1
@@ -7382,7 +7370,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 647, y: 56}
+  m_Size: {x: 727, y: 56}
 --- !u!1 &2028484186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7441,13 +7429,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 647
+  mWidth: 727
   mHeight: 762
   mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.84908134
+  aspectRatio: 0.95406824
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -7689,7 +7677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2130099993
 Transform:
   m_ObjectHideFlags: 0
@@ -7735,10 +7723,10 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 720
+  mWidth: 727
   mHeight: 100
   mDepth: 3
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 7.2
+  aspectRatio: 7.27

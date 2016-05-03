@@ -1,6 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{AF9BD034-FFEE-4E99-E3AD-17BF69105A6D}") = "meteorgame", "Assembly-CSharp-vs.csproj", "{F3FFD14D-3761-07A0-D713-C83AED900B17}"
 EndProject
 Project("{AF9BD034-FFEE-4E99-E3AD-17BF69105A6D}") = "meteorgame", "Assembly-CSharp-Editor-vs.csproj", "{E16336C8-7BE9-EE6D-6D19-D6F9148AD45E}"
@@ -19,9 +18,6 @@ Global
 		{E16336C8-7BE9-EE6D-6D19-D6F9148AD45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E16336C8-7BE9-EE6D-6D19-D6F9148AD45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E16336C8-7BE9-EE6D-6D19-D6F9148AD45E}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 																																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
@@ -42,5 +38,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
