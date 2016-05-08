@@ -50,6 +50,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CloudParallax.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameManager\Meteors.cs" />
      <Compile Include="Assets\Scripts\Meteors.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\UI\UICountdownWindow.cs" />

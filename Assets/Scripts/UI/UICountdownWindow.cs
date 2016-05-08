@@ -29,7 +29,7 @@ public class UICountdownWindow : MonoBehaviour {
 
 		if (m_CountdownTime > 0) {
 			timeLabel.text = "" + m_CountdownTime;
-			gameObject.GetComponent<UIPlaySound> ().Play();
+			// gameObject.GetComponent<UIPlaySound> ().Play();
 		} else if (m_CountdownTime == 0) {
 			timeLabel.text = "GO";
 		} else {
