@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public partial class GameManager : MonoBehaviour
 {
 	[Header ("Player Assets")]

@@ -66,6 +66,5 @@ public void GenerateMeteors()
 	{
 		CancelInvoke("SpawnBigMeteor");
 		CancelInvoke("SpawnSmallMeteor");
-		Debug.LogError ("Stoping meteors!");
 	}
 }
