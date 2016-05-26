@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public partial class GameManager : MonoBehaviour
 {
@@ -96,8 +97,8 @@ public partial class GameManager : MonoBehaviour
 			PlayerPrefs.SetInt ("highscore", highScore);
 			PlayerPrefs.Save ();
 
-			uiHolder.scoreBackgroundColor.enabled = true;
-			uiHolder.scoreBackgroundSize.enabled = true;
+			uiHolder.ScoreBackgroundColor.enabled = true;
+			uiHolder.ScoreBackgroundSize.enabled = true;
         }
     }
 

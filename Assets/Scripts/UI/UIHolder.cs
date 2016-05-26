@@ -4,33 +4,32 @@ using System.Collections;
 public class UIHolder : MonoBehaviour {
 
 	[Header ("UI Components")]
-	// public UISprite pauseButton;
 	public UISprite score;
+	public UIWidget buttonContainer;
 
-	public TweenColor scoreBackgroundColor;
-	public TweenScale scoreBackgroundSize;
-
+	public TweenColor ScoreBackgroundColor { get; set; }
+	public TweenScale ScoreBackgroundSize { get; set; }
 	public UISprite scoreBackground;
 
 	public void SetForMainMenu()
 	{
-		// NGUITools.SetActive (pauseButton.gameObject, false);
+		NGUITools.SetActive (buttonContainer.gameObject, true);
 		NGUITools.SetActive (score.gameObject, false);
 
 	}
 
 	public void SetForPlayMode()
 	{
-		// NGUITools.SetActive (pauseButton.gameObject, true);
+		NGUITools.SetActive (buttonContainer.gameObject, false);
 		NGUITools.SetActive (score.gameObject, true);
 
-		scoreBackgroundColor = scoreBackground.GetComponent<TweenColor>();
-		scoreBackgroundSize = scoreBackground.GetComponent<TweenScale>();
+		ScoreBackgroundColor = scoreBackground.GetComponent<TweenColor>();
+		ScoreBackgroundSize = scoreBackground.GetComponent<TweenScale>();
 	}
 
 	public void SetForGameOver()
 	{
-		// NGUITools.SetActive (pauseButton.gameObject, false);
+		NGUITools.SetActive (buttonContainer.gameObject, false);
 		NGUITools.SetActive (score.gameObject, false);
 
 	}
