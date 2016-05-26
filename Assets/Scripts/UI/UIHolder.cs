@@ -43,6 +43,18 @@ public class UIHolder : MonoBehaviour {
 		case "Menu":
 			Application.LoadLevel("game");
 			break;
+		case "Options Button":
+			NGUITools.SetActive(GameManager.Instance.optionsWindow.gameObject, true);
+			NGUITools.SetActive(GameManager.Instance.mainMenuWindow.gameObject, false);
+			break;
+		case "Back Button":
+			NGUITools.SetActive(GameManager.Instance.optionsWindow.gameObject, false);
+			NGUITools.SetActive(GameManager.Instance.mainMenuWindow.gameObject, true);
+			break;
+		case "Play Button":
+			NGUITools.SetActive(GameManager.Instance.countDownWindow.gameObject, true);
+			NGUITools.SetActive(GameManager.Instance.mainMenuWindow.gameObject, false);
+			break;
 		}
 	}
 }

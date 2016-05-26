@@ -1,6 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{8F6B983A-D068-8184-7A18-0F1398910891}") = "meteor", "Assembly-CSharp-firstpass.csproj", "{041B2758-94BE-ED58-32D4-3C121AE520DC}"
 EndProject
 Project("{8F6B983A-D068-8184-7A18-0F1398910891}") = "meteor", "Assembly-CSharp.csproj", "{36CEE91D-155B-5CEA-81AC-BB321449ECC0}"
@@ -31,9 +30,6 @@ Global
 		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj

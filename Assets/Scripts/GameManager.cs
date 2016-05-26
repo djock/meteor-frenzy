@@ -16,6 +16,7 @@ public partial class GameManager : MonoBehaviour
 	public UIPanel uiHolderWindow;
 	public UIPanel countDownWindow;
 	public UIPanel gameOverWindow;
+	public UIPanel optionsWindow;
 
 	[Header ("Modal Holder")]
 	public UIPanel quitGame;
