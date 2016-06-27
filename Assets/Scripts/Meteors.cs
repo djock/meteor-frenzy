@@ -18,13 +18,21 @@ public class Meteors : MonoBehaviour {
 	void Update ()
 	{	
 		GetComponent<Rigidbody2D> ().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, meteorSpeed);
+
+		if(Input.GetMouseButtonDown(0)) {
+			RaycastHit2D hity = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+			if(hity.collider != null) {
+				 DestroyMeteor(hity.collider.gameObject);
+				 GameManager.Instance.MeteorExplosion(hity.collider.gameObject.transform.position);
+			}
+		}
 	}
 
-	public void Destroy ()
+	public void DestroyMeteor (GameObject go)
 	{
 		GameManager.Instance.AddPoints (pointsToAdd);
-		GameManager.Instance.MeteorExplosion(transform.position);
-		Destroy (gameObject);    
+		Destroy (go);    
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

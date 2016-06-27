@@ -6,8 +6,6 @@ Project("{8F6B983A-D068-8184-7A18-0F1398910891}") = "meteor", "Assembly-CSharp.c
 EndProject
 Project("{8F6B983A-D068-8184-7A18-0F1398910891}") = "meteor", "Assembly-CSharp-Editor-firstpass.csproj", "{21B0DD76-3DD5-D55E-582D-3A54F449E32B}"
 EndProject
-Project("{8F6B983A-D068-8184-7A18-0F1398910891}") = "meteor", "Assembly-CSharp-Editor.csproj", "{38F2B3D2-A5B4-6707-25A9-3503898CB50A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,10 +24,6 @@ Global
 		{21B0DD76-3DD5-D55E-582D-3A54F449E32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B0DD76-3DD5-D55E-582D-3A54F449E32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B0DD76-3DD5-D55E-582D-3A54F449E32B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38F2B3D2-A5B4-6707-25A9-3503898CB50A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj

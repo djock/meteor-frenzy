@@ -13,7 +13,7 @@ public class UIHolder : MonoBehaviour {
 
 	public void SetForMainMenu()
 	{
-		NGUITools.SetActive (buttonContainer.gameObject, true);
+		NGUITools.SetActive (buttonContainer.gameObject, false);
 		NGUITools.SetActive (score.gameObject, false);
 
 	}

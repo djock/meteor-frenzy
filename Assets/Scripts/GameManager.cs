@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
 
 public partial class GameManager : MonoBehaviour

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public partial class GameManager : MonoBehaviour {
+    
 public void GenerateMeteors()
     {
         CancelInvoke("SpawnBigMeteor");
@@ -40,10 +41,10 @@ public void GenerateMeteors()
 
     public void MeteorExplosion(Vector3 position)
     {
-        instantiate(meteorDestroyParticle, position);
+        Instantiate(meteorDestroyParticle, position);
     }
 
-    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
+    private ParticleSystem Instantiate(ParticleSystem prefab, Vector3 position)
     {
         ParticleSystem newParticleSystem = Instantiate(prefab, position, Quaternion.identity) as ParticleSystem;
         Destroy(newParticleSystem.gameObject, newParticleSystem.startLifetime);
