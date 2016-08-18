@@ -9,8 +9,16 @@ public class Meteors : MonoBehaviour
 
 	public Vector2 velocity = new Vector2 (0, -2);
 	public float range;
+	Sprite sprite;
 
-	UI2DSprite sprite;
+	void Awake() {
+		int index = (int)Random.Range(0, GameManager.Instance.spriteSheet.Length);
+
+		sprite = GameManager.Instance.spriteSheet[index];
+		GetComponent<UI2DSprite>().sprite2D = sprite;
+
+	}
+
 
 	void Start ()
 	{

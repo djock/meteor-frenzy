@@ -41,7 +41,7 @@ public partial class GameManager : MonoBehaviour
 	public UIHolder uiHolder;
 
     public static GameManager Instance;
-
+	
 	[HideInInspector]
 	public enum gameState
 	{
@@ -51,8 +51,12 @@ public partial class GameManager : MonoBehaviour
 
 	public  gameState gs;
 
+	public Sprite[] spriteSheet;
+
 	void Awake ()
 	{
+		spriteSheet = Resources.LoadAll<Sprite>("MeteorAtlas");
+
 		Instance = this;
         StartCoroutine(MeteorDifficulty());
     }
