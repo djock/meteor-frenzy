@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\UI\UICountdownWindow.cs" />
      <Compile Include="Assets\Scripts\UI\UIGameOver.cs" />
      <Compile Include="Assets\Scripts\UI\UIHolder.cs" />
+     <Compile Include="Assets\Scripts\UI\UILeaderboard.cs" />
      <Compile Include="Assets\Scripts\UI\UIMainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\UIOptions.cs" />
      <Compile Include="Assets\Scripts\UI\UIPauseGame.cs" />
@@ -64,8 +65,12 @@
      <Compile Include="Assets\Scripts\Utils\UIWindow.cs" />
      <Compile Include="Assets\Scripts\Utils\UIWindowButton.cs" />
      <Compile Include="Assets\Scripts\testGPGMenu.cs" />
+     <Compile Include="Assets\dreamlo\LeaderBoardSample.cs" />
+     <Compile Include="Assets\dreamlo\dreamloLeaderBoard.cs" />
+     <Compile Include="Assets\dreamlo\dreamloPromoCode.cs" />
      <None Include="Assets\Plugins\NGUI\ReadMe - 3.8.0.txt" />
      <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\dreamlo\README_FIRST.txt" />
      <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
      <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
      <None Include="Assets\Plugins\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
